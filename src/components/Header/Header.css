@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 70px 18px 70px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.header__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__signup {
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.header__signup:hover {
+  color: rgb(234, 234, 234);
+}
+
+.header__signin {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.header__link {
+  padding: 8px 20px;
+  background-color: #3DDC84;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.header__link:hover {
+  background-color: #33c474;
+}
