@@ -5,15 +5,17 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path='/' element={
+    <div className="app">
+      <div className='app__container'>
+       <Routes>
+         <Route path='/' element={
           <>
-          <Header />
-          <Main />
+            <Header />
+            <Main />
           </>
         }/>
-      </Routes>
+        </Routes>
+      </div>
     </div>
   );
 }

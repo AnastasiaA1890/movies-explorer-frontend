@@ -1,0 +1,22 @@
+.navtab {
+  display: flex;
+  padding-top: 151px;
+  width: 30%;
+  justify-content: space-evenly;
+}
+
+.navtab__icon {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  padding: 10px 17px;
+  background-color: rgba(48, 48, 48, 1);
+  border-radius: 10px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.navtab__icon:hover {
+  background-color: rgb(44, 44, 44);
+}
