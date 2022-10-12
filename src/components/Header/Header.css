@@ -44,3 +44,13 @@
 .header__link:hover {
   background-color: #33c474;
 }
+
+@media screen and (max-width: 565px) {
+  .header__link {
+    margin-left: 14px;
+  }
+
+  .header {
+    padding: 18px 14px 18px 14px;
+  }
+}

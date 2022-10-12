@@ -1,6 +1,7 @@
 .navtab {
   display: flex;
   padding-top: 151px;
+  padding-bottom: 30px;
   width: 30%;
   justify-content: space-evenly;
 }
@@ -19,4 +20,36 @@
 
 .navtab__icon:hover {
   background-color: rgb(44, 44, 44);
+}
+
+@media screen and (max-width: 1270px) {
+  .navtab {
+    width: 50%;
+  }
+}
+
+@media screen  and (max-width: 945px) {
+  .navtab {
+    padding-top: 314px;
+  }
+}
+
+@media screen  and (max-width: 775px) {
+  .navtab {
+    width: 70%;
+    padding-top: 250px;
+  }
+}
+
+@media screen  and (max-width: 565px) {
+  .navtab {
+    width: 90%;
+    padding-top: 212px;
+    padding-bottom: 17px;
+  }
+
+  .navtab__icon {
+    padding: 5px 15px;
+    font-size: 10px;
+  }
 }
