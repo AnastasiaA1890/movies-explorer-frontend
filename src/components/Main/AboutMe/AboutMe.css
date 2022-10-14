@@ -27,7 +27,7 @@
 }
 
 .aboutme__photo {
-  height: 327px;
+  width: 280px;
   border-radius: 10px;
 }
 
@@ -77,6 +77,89 @@
   margin: 0;
 }
 
-@media screen and (max-width: 945px) {
+@media screen and (max-width: 775px) {
+  .aboutme__card-links {
+    padding-top: 87px;
+  }
 
+  .aboutme__title {
+    padding-top: 90px;
+  }
+
+  .aboutme__card-name {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .aboutme__card-role {
+    font-size: 12px;
+    padding-top: 16px;
+  }
+
+  .aboutme__card-about {
+    font-size: 12px;
+    padding-top: 20px;
+  }
+
+  .aboutme {
+    padding: 0 50px;
+  }
+
+  .aboutme__photo {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .aboutme__description {
+    flex-direction: column-reverse;
+    padding-top: 60px;
+  }
+  .aboutme__photo {
+    width: 387px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .aboutme {
+    padding: 0 14px;
+  }
+
+  .aboutme__card-about {
+    width: 100%;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .aboutme__card-links {
+    padding-top: 40px;
+  }
+
+  .aboutme__title {
+    padding-top: 70px;
+  }
+
+  .aboutme__card-name {
+    font-size: 30px;
+    line-height: 36px;
+    padding-top: 40px;
+  }
+
+  .aboutme__card-role {
+    font-size: 11px;
+    line-height: 16px;
+    padding-top: 20px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .aboutme__photo {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 355px) {
+  .aboutme__photo {
+    width: 290px;
+  }
 }

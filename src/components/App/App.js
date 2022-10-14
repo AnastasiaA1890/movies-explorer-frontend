@@ -3,6 +3,8 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 import './App.css';
 import Footer from "../Footer/Footer";
+import Register from "../Register/Register";
+import Login from "../Login/Login";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
             <Footer />
           </>
         }/>
+         <Route path='sign-up' element={<Register />} />
+         <Route path='sign-in' element={<Login />} />
         </Routes>
       </div>
     </div>

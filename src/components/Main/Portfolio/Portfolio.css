@@ -55,11 +55,13 @@
   }
 }
 
-@media screen and (max-width: 565px) {
+@media screen and (max-width: 610px) {
   .portfolio {
     padding: 70px 14px;
   }
+}
 
+@media screen and (max-width: 565px) {
   .portfolio__title {
     font-size: 14px;
   }
