@@ -99,3 +99,17 @@ input[type='password'] {
 .login__link:hover {
   color: #3376ea;
 }
+
+@media screen and (max-width: 430px) {
+  .login {
+    max-width: 260px;
+  }
+
+  .login__button {
+    margin-top: 267px;
+  }
+
+  .login__title {
+    text-align: center;
+  }
+}

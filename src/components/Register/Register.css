@@ -99,3 +99,17 @@ input[type='password'] {
 .register__link:hover {
   color: #3376ea;
 }
+
+@media screen and (max-width: 430px) {
+  .register {
+    max-width: 260px;
+  }
+
+  .register__button {
+    margin-top: 267px;
+  }
+
+  .register__title {
+    text-align: center;
+  }
+}

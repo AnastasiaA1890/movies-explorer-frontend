@@ -20,7 +20,7 @@ function Login() {
         <button type='submit' className="login__button">Sign in</button>
         <div className='login__container'>
           <p className="login__text">Not registered yet?</p>
-          <Link to='/sign-up' className='login__link'>Sign up</Link>
+          <Link to='/signup' className='login__link'>Sign up</Link>
         </div>
       </form>
     </div>

@@ -24,7 +24,7 @@ function Register() {
         <button type='submit' className="register__button">Sign up</button>
         <div className='register__container'>
           <p className="register__text">Already have an account?</p>
-          <Link to='/sign-in' className='register__link'>Sign in</Link>
+          <Link to='/signin' className='register__link'>Sign in</Link>
         </div>
       </form>
     </div>
