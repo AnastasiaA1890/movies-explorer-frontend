@@ -5,45 +5,118 @@
   height: 72px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .searchform__line {
-  margin: 0 70px;
-  border-bottom: 1px solid #424242;
+  width: 1px;
+  height: 40px;
+  background-color:  #505050;
 }
 
 .searchform__input {
   background-color: #222222;
   border: none;
-  padding: 10px 0 10px 10px;
+  padding: 10px 10px 10px 10px;
   font-weight: 400;
   font-size: 18px;
   line-height: 20px;
   color: #8B8B8B;
+  width: 100%;
 }
 
 .searchform__container {
   display: flex;
   align-items: center;
   padding-left: 19px;
+  flex-basis: 846px;
 }
 
 .searchform__button {
-  border-radius: 48px;
-  padding: 8px 10px;
-  background-color: #4285F4;
-  color: white;
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 18px;
+  width: 58.65px;
+  height: 34px;
   cursor: pointer;
+  border-radius: 48px;
+  border: none;
+  background-image: url('../../../images/find-button.svg');
+  padding: 0;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-color: #3456F3;
 }
 
 .searchform__button:hover {
   background-color: #3177f5;
 }
 
-.searchform__left-line {
-  margin: 0 19px 0 0;
-  border-right: 1px solid #505050;
+.searchform__toggle-button {
+  width: 36px;
+  height: 20px;
+  border-radius: 20px;
+  border: none;
+  background-image: url('../../../images/toggle-button_active.svg');
+  cursor: pointer;
+  background-repeat: no-repeat;
+}
+
+.searchform__toggle-button_disable {
+  background-image: url('../../../images/toggle-button_disable.svg');
+}
+
+.searchform__toggle-button-name {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: white;
+  padding-right: 30px;
+}
+
+.moviescard__savebutton {
+  cursor: pointer;
+}
+
+.moviescard__savebutton:hover {
+  opacity: .8;
+}
+
+@media screen and (max-width: 1250px) {
+  .searchform__container {
+    flex-basis: 700px;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .searchform__container {
+    flex-basis: 600px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .searchform__container {
+    flex-basis: 500px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .searchform__container {
+    flex-basis: 400px;
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .searchform__container {
+    flex-basis: 300px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .searchform__container {
+    flex-basis: 180px;
+  }
+}
+
+@media screen and (max-width: 565px) {
+  .searchform__container {
+    flex-basis: 700px;
+  }
 }

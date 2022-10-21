@@ -1,12 +1,17 @@
 import React from 'react';
 import './Movies.css'
 import SearchForm from "./SearchForm/SearchForm";
+import MoviesCardList from './MoviesCardList/MoviesCardList';
+import Footer from '../Footer/Footer';
+
 
 function Movies(props) {
   return (
-    <div className='movies'>
+    <section className='movies'>
       <SearchForm />
-    </div>
+      <MoviesCardList />
+      <Footer />
+    </section>
   );
 }
 
