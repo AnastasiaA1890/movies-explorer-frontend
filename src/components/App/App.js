@@ -8,9 +8,22 @@ import Login from "../Login/Login";
 import {useState} from "react";
 import Profile from "../Profile/Profile";
 import Movies from "../Movies/Movies";
+import SavedMovies from '../Movies/SavedMovies/SavedMovies';
+import NotFoundPage from "../NotFoundPage/NotFoundPage";
+import BurgerMenu from "../Header/BurgerMenu/BurgerMenu";
 
 function App() {
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(true)
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(true);
+  const [isNavOpened, setIsNavOpened] = useState(false);
+
+  const handleNavigationOpen = () => {
+    setIsNavOpened(true);
+  }
+
+  const handleNavigationClose = () => {
+    setIsNavOpened(false);
+  }
+
 
   return (
     <div className="app">
@@ -18,22 +31,39 @@ function App() {
        <Routes>
          <Route path='/' element={
           <>
-            <Header isUserLoggedIn={isUserLoggedIn} />
+            <Header isUserLoggedIn={isUserLoggedIn} onNavOpen={handleNavigationOpen}/>
             <Main />
             <Footer />
           </>
         }/>
          <Route path='/movies' element={
            <>
-             <Header isUserLoggedIn={isUserLoggedIn} />
+             <Header isUserLoggedIn={isUserLoggedIn} onNavOpen={handleNavigationOpen} />
              <Movies />
+             <Footer />
+           </>
+         }
+         />
+         <Route path='/saved-movies' element={
+           <>
+             <Header isUserLoggedIn={isUserLoggedIn} onNavOpen={handleNavigationOpen} />
+             <SavedMovies />
+             <Footer />
            </>
          }
          />
          <Route path='signup' element={<Register />} />
          <Route path='signin' element={<Login />} />
-         <Route path='profile' element={<Profile />}/>
+         <Route path='profile' element={
+           <>
+             <Header isUserLoggedIn={isUserLoggedIn} onNavOpen={handleNavigationOpen} />
+             <Profile />
+           </>
+         }
+         />
+         <Route path='*' element={<NotFoundPage />} />
         </Routes>
+        <BurgerMenu isNavOpened={isNavOpened} onNavClose={handleNavigationClose}/>
       </div>
     </div>
   );

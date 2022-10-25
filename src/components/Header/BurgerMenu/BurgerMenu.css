@@ -1,0 +1,105 @@
+.burgermenu {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  background-color: #202020;
+  width: 70%;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+  transition: transform .5s ease-in;
+}
+
+.burgermenu_opened {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.burgermenu__closebutton {
+  background-image: url(../../../images/close-button.svg);
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 25px;
+  height: 25px;
+  background-color: #202020;
+  z-index: 3;
+}
+
+.burgermenu__closebutton:hover {
+  opacity: .7;
+}
+
+.burgermenu__links {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 159px;
+  width: 90%;
+}
+
+.burgermenu__link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 28px;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 7px;
+}
+
+.burgermenu__link:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFFFFF;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.burgermenu__link:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.burgermenu__link:hover {
+  opacity: .7;
+}
+
+.burgermenu__img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 250px;
+  padding-bottom: 92px;
+  cursor: pointer;
+}
+
+.burgermenu__img:hover {
+  opacity: .7;
+}
+
+@media screen and (max-width: 450px) {
+  .burgermenu {
+    width: 100%;
+  }
+
+  .burgermenu__links {
+    padding-top: 144px;
+  }
+
+  .burgermenu__link {
+    margin-bottom: 24px;
+  }
+}

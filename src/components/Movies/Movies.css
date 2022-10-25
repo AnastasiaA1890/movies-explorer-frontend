@@ -1,3 +1,22 @@
 .movies {
-  padding-bottom: 50px;
+  padding: 0 70px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1279px) {
+  .movies {
+    
+  }
+}
+
+@media screen and (max-width: 893px){
+  .movies {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 564px){
+  .movies {
+    padding: 0 10px;
+  }
 }

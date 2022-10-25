@@ -1,5 +1,5 @@
 .searchform {
-  margin: 70px 70px;
+  margin: 70px 0;
   border-radius: 9px;
   background-color: #222222;
   height: 72px;
@@ -69,6 +69,7 @@
   line-height: 18px;
   color: white;
   padding-right: 30px;
+  margin: 0;
 }
 
 .moviescard__savebutton {
@@ -115,8 +116,8 @@
   }
 }
 
-@media screen and (max-width: 565px) {
-  .searchform__container {
-    flex-basis: 700px;
+@media screen and (max-width: 567px) {
+  .searchform {
+    flex-wrap: wrap;
   }
 }
