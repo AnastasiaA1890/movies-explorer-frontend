@@ -42,6 +42,12 @@
   }
 }
 
+@media screen and (max-width: 567px) {
+  .movieslist {
+    padding-top: 45px;
+  }
+}
+
 @media screen and (max-width: 565px) {
   .movieslist {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
