@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import './Header.css';
 import logo from '../../images/logo.svg'
 import { Link } from 'react-router-dom';

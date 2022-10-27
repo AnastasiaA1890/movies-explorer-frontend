@@ -8,6 +8,10 @@
   justify-content: space-between;
 }
 
+.searchform__button-container {
+  display: flex;
+}
+
 .searchform__line {
   width: 1px;
   height: 40px;
@@ -70,6 +74,7 @@
   color: white;
   padding-right: 30px;
   margin: 0;
+  padding-left: 13px;
 }
 
 .moviescard__savebutton {
@@ -139,21 +144,7 @@
   }
 
   .searchform__button-container {
-    display: flex;
     justify-self: end;
-  }
-
-  .searchform__container {
-    
-  }
-
-  .searchform__button {
-  
-    
-  }
-
-  .searchform__toggle-button {
-    
   }
     
   .searchform__toggle-button-name {
@@ -163,7 +154,7 @@
 
 @media screen and (max-width: 420px) {
   .searchform {
-    grid-template-columns: 80% 80px;
+    grid-template-columns: 75% 80px;
   }
   
 }
