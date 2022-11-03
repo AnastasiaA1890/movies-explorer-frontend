@@ -3,6 +3,7 @@
   padding:0 70px;
   display: flex;
   flex-direction: column;
+  max-width: 1140px;
 }
 
 .footer__title {
@@ -84,5 +85,6 @@
 
   .footer__copyright {
     padding-top: 30px;
+    color: #8B8B8B
   }
 }

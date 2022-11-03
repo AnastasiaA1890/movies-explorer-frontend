@@ -2,12 +2,10 @@ import React from "react";
 import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList(props) {
+function MoviesCardList() {
   return (
     <>
       <div className="movieslist">
-        <MoviesCard />
-        <MoviesCard />
         <MoviesCard />
         <MoviesCard />
         <MoviesCard />

@@ -10,7 +10,7 @@ const navigate = useNavigate();
     <section className='notfoundpage'>
       <h2 className='notfoundpage__title'>404</h2>
       <p className='notfoundpage__subtitle'>Page not found</p>
-      <button className='notfoundpage__goback-button' onClick={() => navigate(-1)}>Go back</button>
+      <button type='text' className='notfoundpage__goback-button' onClick={() => navigate(-1)}>Go back</button>
     </section>
   );
 }

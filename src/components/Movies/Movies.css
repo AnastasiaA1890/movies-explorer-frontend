@@ -1,6 +1,7 @@
 .movies {
   padding: 0 70px;
   margin: 0 auto;
+  max-width: 1140px;
 }
 
 @media screen and (max-width: 1279px) {

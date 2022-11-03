@@ -1,9 +1,20 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import "./MoviesCard.css";
 import movie from "../../../images/movie.png";
 
-function MoviesCard(props) {
-  const [isSaved, setIsSaved] = useState(false)
+function MoviesCard() {
+  const [isSaved, setIsSaved] = useState(false);
+  const location = useLocation();
+  const moviesClassName = (`moviescard__save-button ${isSaved ? 'moviescard__saved-button' : ''}`);
+
+  const saveMovie = () => {
+    if (!isSaved) {
+      setIsSaved(true)
+    } else {
+      setIsSaved(false)
+    }
+  }
 
   return (
     <div className="moviescard">
@@ -12,13 +23,14 @@ function MoviesCard(props) {
           <h2 className="moviescard__title">Title</h2>
           <p className="moviescard__time">1h 47min</p>
         </div>
-        {isSaved ? (
-          <button className="moviescard__saved-button"></button>
-        ) :
-          <button className="moviescard__save-button"></button>
+        {
+          location.pathname === '/movies' &&  <button type="text" onClick={saveMovie} className={moviesClassName}></button>
+        }
+        {
+          location.pathname === '/saved-movies' &&  <button type="text" onClick={() => setIsSaved(false)} className="moviescard__delete-button"></button>
         }
       </div>
-      <img src={movie} className='moviescard__image' alt='Movie'></img>
+      <img src={movie} className="moviescard__image" alt="Movie"></img>
     </div>
   );
 }

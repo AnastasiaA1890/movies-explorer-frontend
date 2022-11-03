@@ -24,11 +24,10 @@ function App() {
     setIsNavOpened(false);
   }
 
-
   return (
+    <>
     <div className="app">
-      <div className='app__container'>
-       <Routes>
+      <Routes>
          <Route path='/' element={
           <>
             <Header isUserLoggedIn={isUserLoggedIn} onNavOpen={handleNavigationOpen}/>
@@ -63,9 +62,9 @@ function App() {
          />
          <Route path='*' element={<NotFoundPage />} />
         </Routes>
-        <BurgerMenu isNavOpened={isNavOpened} onNavClose={handleNavigationClose}/>
       </div>
-    </div>
+      <BurgerMenu isNavOpened={isNavOpened} onNavClose={handleNavigationClose}/>
+    </>
   );
 }
 

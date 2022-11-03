@@ -62,7 +62,7 @@
 }
 
 .profile__button:hover {
-  color: rgb(234, 234, 234);
+  opacity: 0.7;
 }
 
 .profile__buttons-container {
@@ -89,7 +89,7 @@
 }
 
 .profile__link:hover {
-  color: #ec2254;
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 430px) {

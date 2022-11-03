@@ -3,7 +3,9 @@
   justify-content: space-between;
   padding: 18px 70px 18px 70px;
   align-items: center;
-  box-sizing: border-box;
+  box-sizing: content-box;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 .header__links {
@@ -31,7 +33,7 @@
 }
 
 .header__signup:hover {
-  color: rgb(234, 234, 234);
+  opacity: 0.7;
 }
 
 .header__signin {
@@ -53,7 +55,7 @@
 }
 
 .header__link:hover {
-  background-color: #33c474;
+  opacity: 0.7;
 }
 
 .header__account-img:hover {
@@ -85,7 +87,7 @@
 }
 
 .header__film:hover {
-  color: rgb(234, 234, 234);
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 1250px) {

@@ -48,7 +48,8 @@
   grid-template-columns: repeat(7, 90px);
   padding: 100px 0;
   gap: 10px;
-
+  text-decoration: none;
+  margin: 0;
 }
 
 .techs__card {
@@ -113,6 +114,7 @@
 
   .techs {
     padding: 0 14px;
+    background-color: #202020;
   }
 }
 

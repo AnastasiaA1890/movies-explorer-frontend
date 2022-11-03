@@ -3,7 +3,7 @@ import logo from '../../images/logo.svg'
 import { Link } from 'react-router-dom';
 import profile from '../../images/profile.svg';
 
-function Header({ isUserLoggedIn, onNavOpen }) {
+function Header({ isUserLoggedIn, onNavOpen, handleSavedMovies }) {
 
 
   return isUserLoggedIn ? (
@@ -13,7 +13,7 @@ function Header({ isUserLoggedIn, onNavOpen }) {
         <nav className='header__nav'>
           <div className='header__films'>
             <Link to='/movies' className='header__film'>Movies</Link>
-            <Link to='/saved-movies' className='header__film'>Saved movies</Link>
+            <Link to='/saved-movies' onClick={handleSavedMovies} className='header__film'>Saved movies</Link>
           </div>
           <Link to='/profile' className='header__account-link'><img className='header__account-img' src={profile} alt='Profile'/></Link>
         </nav>

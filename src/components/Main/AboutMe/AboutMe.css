@@ -64,7 +64,7 @@
 }
 
 .aboutme__card-link:hover {
-  color: rgb(234, 234, 234);
+  opacity: 0.7;
 }
 
 .aboutme__card-about {
