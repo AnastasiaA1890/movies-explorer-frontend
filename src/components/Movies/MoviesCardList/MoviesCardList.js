@@ -5,11 +5,11 @@ import MoviesCard from "../MoviesCard/MoviesCard";
 function MoviesCardList() {
   return (
     <>
-      <div className="movieslist">
+      <ul className="movieslist">
         <MoviesCard />
         <MoviesCard />
         <MoviesCard />
-      </div>
+      </ul>
       <div className="movieslist__more-button">More</div>
     </>
   );

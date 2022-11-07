@@ -17,7 +17,7 @@ function MoviesCard() {
   }
 
   return (
-    <div className="moviescard">
+    <li className="moviescard">
       <div className="moviescard__wrap">
         <div className="moviescard__container">
           <h2 className="moviescard__title">Title</h2>
@@ -31,7 +31,7 @@ function MoviesCard() {
         }
       </div>
       <img src={movie} className="moviescard__image" alt="Movie"></img>
-    </div>
+    </li>
   );
 }
 

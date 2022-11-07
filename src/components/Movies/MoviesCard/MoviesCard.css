@@ -1,6 +1,7 @@
 .moviescard {
   width: 364px;
   background-color: #222222;
+  list-style-type: none;
 }
 
 .moviescard__image {
@@ -17,6 +18,7 @@
 .moviescard__save-button {
   border: none;
   background-image: url(../../../images/save_button.svg);
+  background-color: #222222;
   background-repeat: no-repeat;
   width: 30px;
   height: 30px;
@@ -48,6 +50,7 @@
 
 .moviescard__delete-button {
   background-image: url(../../../images/delete-saved.svg);
+  background-color: #222222;
   background-repeat: no-repeat;
   width: 30px;
   height: 30px;

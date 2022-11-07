@@ -5,7 +5,7 @@ function Profile(props) {
 
   return (
     <section className="profile">
-      <form className="profile__form">
+      <form className="profile__form" novalidate>
         <h2 className="profile__title">Hello, Anastasia!</h2>
         <div className="profile__input-wrap">
           <label htmlFor="" className="profile__field">

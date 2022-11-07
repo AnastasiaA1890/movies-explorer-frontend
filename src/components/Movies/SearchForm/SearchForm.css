@@ -50,7 +50,7 @@
 }
 
 .searchform__button:hover {
-  background-color: #3177f5;
+  opacity: 0.7;
 }
 
 .searchform__toggle-button {
@@ -63,8 +63,23 @@
   background-repeat: no-repeat;
 }
 
+.searchform__toggle-button:hover {
+  opacity: 0.9;
+}
+
 .searchform__toggle-button_disable {
   background-image: url('../../../images/toggle-button_disable.svg');
+  width: 36px;
+  height: 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-color: #222222;
+}
+
+.searchform__toggle-button_disable:hover {
+  opacity: 0.7;
 }
 
 .searchform__toggle-button-name {

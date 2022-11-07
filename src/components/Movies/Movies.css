@@ -4,12 +4,6 @@
   max-width: 1140px;
 }
 
-@media screen and (max-width: 1279px) {
-  .movies {
-    
-  }
-}
-
 @media screen and (max-width: 893px){
   .movies {
     padding: 0 30px;

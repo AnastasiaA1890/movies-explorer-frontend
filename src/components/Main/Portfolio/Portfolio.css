@@ -25,6 +25,8 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(66, 66, 66, 1);
 }
 
 .portfolio__link {
@@ -46,11 +48,6 @@
   margin: 0;
 }
 
-.portfolio__line {
-  padding-top: 20px;
-  border-bottom: 1px solid rgba(66, 66, 66, 1);
-}
-
 @media screen and (max-width: 775px) {
   .portfolio {
     padding: 90px 50px;
@@ -63,7 +60,7 @@
 
 @media screen and (max-width: 610px) {
   .portfolio {
-    padding: 70px 14px;
+    padding: 70px 18px;
   }
 }
 
