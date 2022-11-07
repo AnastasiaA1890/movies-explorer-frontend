@@ -24,10 +24,10 @@ function MoviesCard() {
           <p className="moviescard__time">1h 47min</p>
         </div>
         {
-          location.pathname === '/movies' &&  <button type="text" onClick={saveMovie} className={moviesClassName}></button>
+          location.pathname === '/movies' &&  <button type="button" onClick={saveMovie} className={moviesClassName}></button>
         }
         {
-          location.pathname === '/saved-movies' &&  <button type="text" onClick={() => setIsSaved(false)} className="moviescard__delete-button"></button>
+          location.pathname === '/saved-movies' &&  <button type="button" onClick={() => setIsSaved(false)} className="moviescard__delete-button"></button>
         }
       </div>
       <img src={movie} className="moviescard__image" alt="Movie"></img>
