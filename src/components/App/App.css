@@ -1,0 +1,10 @@
+@import url(../../vendor/normalize.css);
+@import url(../../vendor/fonts/fonts.css);
+
+.app {
+  margin: 0 auto;
+  min-width: 320px;
+  min-height: 100vh;
+  height: 100%;
+  max-width: 1280px;
+}

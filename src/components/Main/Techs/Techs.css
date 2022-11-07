@@ -1,0 +1,152 @@
+.techs {
+  margin: 0 auto;
+  padding: 0 70px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(39, 39, 39, 1);
+}
+
+.techs__title {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26.63px;
+  color: rgba(255, 255, 255, 1);
+  padding-bottom: 23px;
+  padding-top: 100px;
+  border-bottom: 1px solid rgba(218, 218, 218, 1);
+  margin: 0;
+}
+
+.techs__about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.techs__about-title {
+  font-size: 50px;
+  color: rgba(255, 255, 255, 1);
+  line-height: 58px;
+  font-weight: 400;
+  margin: 0;
+  padding-top: 90px;
+}
+
+.techs__about-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 1);
+  line-height: 20px;
+  font-weight: 400;
+  margin: 0;
+  padding-top: 26px;
+  width: 50%;
+  text-align: center;
+}
+
+.techs__cards {
+  display: grid;
+  grid-template-columns: repeat(7, 90px);
+  padding: 100px 0;
+  gap: 10px;
+  text-decoration: none;
+  margin: 0;
+}
+
+.techs__card {
+  width: 90px;
+  height: 60px;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(48, 48, 48, 1);
+  border-radius: 10px;
+  line-height: 17px;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 845px) {
+  .techs__cards {
+    grid-template-columns: repeat(7, 84px);
+  }
+
+  .techs__card {
+    width: 84px;
+    height: 57px;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .techs__title {
+    padding-top: 90px;
+  }
+
+  .techs {
+    padding: 0 50px;
+  }
+
+  .techs__about-title {
+    padding-top: 80px;
+  }
+
+  .techs__about-subtitle {
+    font-size: 12px;
+    padding-top: 22px;
+  }
+
+  .techs__cards {
+    padding: 83px 0 90px;
+    grid-template-columns: repeat(5, 84px);
+  }
+
+  .techs__card {
+    width: 84px;
+    height: 57px;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .techs__cards {
+    grid-template-columns: repeat(4, 84px);
+  }
+
+  .techs {
+    padding: 0 18px;
+    background-color: #202020;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .techs__cards {
+    grid-template-columns: repeat(3, 84px);
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+
+  .techs__title {
+    padding-bottom: 28px;
+    padding-top: 70px;
+  }
+
+  .techs__about-title {
+    padding-top: 60px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .techs__about-subtitle {
+    width: 100%;
+    font-size: 11px;
+    line-height: 16px;
+    padding-top: 24px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .techs__cards {
+    grid-template-columns: repeat(2, 84px);
+  }
+}
+

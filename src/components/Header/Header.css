@@ -1,0 +1,149 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 70px 18px 70px;
+  align-items: center;
+  box-sizing: content-box;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.header__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 1050px;
+}
+
+.header__films {
+  display: flex;
+  align-items: center;
+}
+
+.header__signup {
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.header__signup:hover {
+  opacity: 0.7;
+}
+
+.header__signin {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.header__link {
+  padding: 8px 20px;
+  background-color: #3DDC84;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.header__link:hover {
+  opacity: 0.7;
+}
+
+.header__account-img:hover {
+  opacity: 0.7;
+}
+
+.header__film:last-child {
+  padding-left: 16px;
+}
+
+.header__film {
+  color: white;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+.header__burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  background-image: url(../../images/burger.svg);
+  cursor: pointer;
+}
+
+.header__burger:hover {
+  opacity: 0.7;
+}
+
+.header__film:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 1250px) {
+  .header__nav {
+    flex-basis: 1000px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header__nav {
+    flex-basis: 930px;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .header__nav {
+    flex-basis: 830px;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .header__nav {
+    flex-basis: 730px;
+  }
+}
+
+@media screen and (max-width: 925px) {
+  .header__nav {
+    flex-basis: 670px;
+  }
+}
+
+@media screen and (max-width: 893px) {
+  .header {
+    padding: 18px 30px 18px 30px;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__burger {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 820px) {
+
+}
+
+@media screen and (max-width: 565px) {
+  .header__link {
+    margin-left: 14px;
+  }
+
+  .header {
+    padding: 18px 14px 18px 14px;
+  }
+}
