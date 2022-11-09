@@ -3,7 +3,7 @@ import './Register.css';
 import logo from '../../images/logo.svg'
 import { Link } from 'react-router-dom';
 
-function Register() {
+function Register({ handleRegister }) {
 
   const [isError, setIsError] = useState(false);
   const [name, setName] = useState('');
@@ -33,10 +33,15 @@ function Register() {
     setPassword(evt.target.value)
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleRegister({ name, email, password })
+  }
+
   return (
     <div className='register'>
       <Link to='/'><img alt='Logo' src={logo} className='register__logo'/></Link>
-      <form className="register__form" onChange={(evt) => showInputError(evt)} noValidate>
+      <form className="register__form" onChange={(evt) => showInputError(evt)} onSubmit={handleSubmit} noValidate>
         <h2 className="register__title">Welcome!</h2>
         <div className='register__input-wrap'>
           <label htmlFor="" className='register__field'>Name</label>
