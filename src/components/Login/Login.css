@@ -69,7 +69,25 @@ input[type='password'] {
 }
 
 .login__button:hover {
-  background-color: #3376ea;
+  opacity: 0.8;
+}
+
+.login__button-error {
+  margin: 69px 0 16px;
+  background-color: #F8F8F8;
+  width: 100%;
+  color: #000000;
+  padding: 15px 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  border-radius: 3px;
+  border: none;
+  cursor: default;
+}
+
+.login__button-error:hover {
+  opacity: 0.8;
 }
 
 .login__container {

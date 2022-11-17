@@ -7,7 +7,7 @@ function SearchForm(props) {
   const [isFilter, setIsFilter] = useState('');
 
   return (
-    <form className="searchform" novalidate>
+    <form className="searchform" noValidate>
       <div className="searchform__container">
         <img className="searchform__icon" src={searchIcon} alt="Search Icon" />
         <input type="text" className="searchform__input" placeholder="Movie" required/>

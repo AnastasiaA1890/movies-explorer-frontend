@@ -6,6 +6,14 @@
 
 .moviescard__image {
  width: 364px;
+ height: 190px;
+ cursor: pointer;
+ object-fit: cover;
+ object-position: 0 0;
+}
+
+.moviescard__container {
+  max-width: 290px;
 }
 
 .moviescard__wrap {
@@ -71,6 +79,9 @@
   font-size: 15px;
   line-height: 18px;
   color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .moviescard__time {

@@ -3,11 +3,11 @@ import './Movies.css';
 import SearchForm from "./SearchForm/SearchForm";
 import MoviesCardList from './MoviesCardList/MoviesCardList';
 
-function Movies({ isSavedMovieSection, isMovieSection }) {
+function Movies({ isSavedMovieSection, isMovieSection, movies }) {
   return (
     <section className='movies'>
       <SearchForm />
-      <MoviesCardList isMovieSection={isMovieSection} isSavedMovieSection={isSavedMovieSection} />
+      <MoviesCardList movies={movies} isMovieSection={isMovieSection} isSavedMovieSection={isSavedMovieSection} />
     </section>
   );
 }

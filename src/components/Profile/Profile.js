@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import "./Profile.css";
 
-function Profile(props) {
+function Profile({ handleSignOut }) {
 
   return (
     <section className="profile">
@@ -24,7 +24,7 @@ function Profile(props) {
           <button type="submit" className="profile__button">
             Edit profile
           </button>
-          <Link to="/" className="profile__link">
+          <Link onClick={handleSignOut} to="/" className="profile__link">
             Sign out
           </Link>
         </div>

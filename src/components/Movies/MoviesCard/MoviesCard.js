@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./MoviesCard.css";
-import movie from "../../../images/movie.png";
+//import movie from "../../../images/movie.png";
 
-function MoviesCard() {
+function MoviesCard({ movie }) {
   const [isSaved, setIsSaved] = useState(false);
   const location = useLocation();
   const moviesClassName = (`moviescard__save-button ${isSaved ? 'moviescard__saved-button' : ''}`);
@@ -20,7 +20,7 @@ function MoviesCard() {
     <li className="moviescard">
       <div className="moviescard__wrap">
         <div className="moviescard__container">
-          <h2 className="moviescard__title">Title</h2>
+          <h2 className="moviescard__title">{movie.nameEN}</h2>
           <p className="moviescard__time">1h 47min</p>
         </div>
         {
@@ -30,7 +30,7 @@ function MoviesCard() {
           location.pathname === '/saved-movies' &&  <button type="button" onClick={() => setIsSaved(false)} className="moviescard__delete-button"></button>
         }
       </div>
-      <img src={movie} className="moviescard__image" alt="Movie"></img>
+      <a href={movie.trailerLink} rel="noreferrer" target="_blank"><img src={`https://api.nomoreparties.co/${movie.image.url}`} className="moviescard__image" alt="Movie"></img></a>
     </li>
   );
 }
