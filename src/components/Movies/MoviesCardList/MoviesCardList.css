@@ -11,6 +11,14 @@
   padding-left: 0;
 }
 
+.movieslist__error {
+  color: #EE3465;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  margin: 0;
+}
+
 .movieslist__more-button {
   display: flex;
   align-items: center;

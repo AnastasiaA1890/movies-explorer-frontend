@@ -16,31 +16,38 @@ import { CurrentUserContext } from "../../context/CurrentUserContext";
 
 import * as SiteAuth from "../../utils/SiteAuth";
 import { moviesApi } from "../../utils/MoviesApi";
+import { mainApi } from "../../utils/MainApi";
 
 function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [isNavOpened, setIsNavOpened] = useState(false);
   const [isSuccessful, setIsSuccessful] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
-  const [movies, setMovies] = useState([]);
+  const [listOfMovies, setListOfMovies] = useState([]);
+  const [filteredItem, setFilteredItem] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
   const navigate = useNavigate();
 
-  const handleToken = () => {
+  function handleToken() {
     const jwt = localStorage.getItem('jwt')
-    SiteAuth
+    if (jwt) {
+      SiteAuth
       .checkToken(jwt)
       .then((res) => {
         if (res) {
           setIsUserLoggedIn(true)
+          setEmail(res.email)
           navigate('/movies')
         }
       })
+    }
   }
 
   useEffect(() => {
     handleToken();
-  }, []);
+  }, []); 
 
   const handleNavigationOpen = () => {
     setIsNavOpened(true);
@@ -50,26 +57,68 @@ function App() {
     if (!isUserLoggedIn) {
       return
     }
+    mainApi
+      .getUserData(localStorage.getItem('jwt'))
+        .then((res) => {
+          setCurrentUser(res)
+        })
+        .catch((err) => {
+          console.log(err)
+        });
+  }, [isUserLoggedIn])
+
+
+  /* useEffect(() => {
+    if (!isUserLoggedIn) {
+      return
+    }
     moviesApi
       .getMovies(localStorage.getItem('jwt'))
       .then((res) => {
-        setMovies(res)
+        setListOfMovies(res)
         console.log(res)
       })
       .catch((err) => {
         console.log(err)
       })
-  }, [isUserLoggedIn])
+  }, [isUserLoggedIn]) */
 
   const handleNavigationClose = () => {
     setIsNavOpened(false);
   };
 
+  function handleUpdateUser(data) {
+    mainApi
+      .editProfile(data, localStorage.getItem('jwt'))
+        .then((res) => {
+          setCurrentUser(res)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+  }
+
+  function handleFilterMovies(data) {
+    moviesApi
+      .getMovies(localStorage.getItem('jwt'))
+      .then((res) => {
+        setListOfMovies(res)
+        console.log(res)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    setFilteredItem(data)
+  }
+
+  function handleShortMovies(data) {
+    console.log(data)
+  }
+
   const handleRegister = ({ name, email, password }) => {
     SiteAuth
       .register({ name, email, password })
       .then((res) => {
-        console.log(res);
         setIsSuccessful(true);
         navigate('/signin')
       })
@@ -93,13 +142,12 @@ function App() {
     })
   }
 
+
   const handleSignOut = () => {
     localStorage.removeItem('jwt');
     navigate('/signin');
     setIsUserLoggedIn(false);
   }
-
-  console.log(isUserLoggedIn)
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -117,7 +165,7 @@ function App() {
           <Route exact path="/movies/*" element={
             <ProtectedRoute path='' isUserLoggedIn={isUserLoggedIn}>
               <Header isUserLoggedIn={isUserLoggedIn} onNavOpen={handleNavigationOpen} />
-              <Movies movies={movies} />
+              <Movies listOfMovies={listOfMovies} filteredItem={filteredItem} onFilterMovies={handleFilterMovies} onShortMovies={handleShortMovies}/>
               <Footer />
             </ProtectedRoute>
           }>
@@ -135,7 +183,7 @@ function App() {
           <Route exact path="/profile/*" element={
             <ProtectedRoute path='' isUserLoggedIn={isUserLoggedIn}>
               <Header isUserLoggedIn={isUserLoggedIn} onNavOpen={handleNavigationOpen} />
-              <Profile handleSignOut={handleSignOut} />
+              <Profile onUpdateUser={handleUpdateUser} handleSignOut={handleSignOut} name={name} email={email} />
             </ProtectedRoute>
           }>
           </Route>
