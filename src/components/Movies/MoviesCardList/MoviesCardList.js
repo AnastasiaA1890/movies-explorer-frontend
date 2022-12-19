@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList({ listOfMovies, filteredItem }) {
+function MoviesCardList({ movies, filteredItem }) {
   
   const innerWidth = window.innerWidth;
   const [moreMovies, setMoreMovies] = useState(12);
@@ -20,7 +20,7 @@ function MoviesCardList({ listOfMovies, filteredItem }) {
       <div className="movieslist">
         {
           typeof filteredItem === 'string' && filteredItem.length !== 0 ?
-          listOfMovies
+          movies
             .filter((movie) => movie.nameEN.toLowerCase().includes(filteredItem.toLowerCase()))
             .slice(0, moreMovies)
             .map((movie) => (
@@ -28,7 +28,11 @@ function MoviesCardList({ listOfMovies, filteredItem }) {
             )) : (<p className="movieslist__error">Please enter a keyword to launch list of movies</p>)
         }    
       </div>
-      <div onClick={loadMore} className="movieslist__more-button">More</div>
+      {
+        movies.length >= 3 ? (
+          <div onClick={loadMore} className="movieslist__more-button">More</div>
+        ) : null
+      }
     </section>
   );
 }

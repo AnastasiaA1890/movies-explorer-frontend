@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useAsyncError, useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import "./App.css";
@@ -23,12 +23,15 @@ function App() {
   const [isNavOpened, setIsNavOpened] = useState(false);
   const [isSuccessful, setIsSuccessful] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
+  const [movies, setMovies] = useState({});
+  const [savedMovies, setSavedMovies] = useState({});
   const [listOfMovies, setListOfMovies] = useState([]);
   const [filteredItem, setFilteredItem] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
   const navigate = useNavigate();
+
 
   function handleToken() {
     const jwt = localStorage.getItem('jwt')
@@ -38,7 +41,8 @@ function App() {
       .then((res) => {
         if (res) {
           setIsUserLoggedIn(true)
-          setEmail(res.email)
+          setCurrentUser(res)
+          //setEmail(res.email)
           navigate('/movies')
         }
       })
@@ -47,7 +51,7 @@ function App() {
 
   useEffect(() => {
     handleToken();
-  }, []); 
+  }, []);
 
   const handleNavigationOpen = () => {
     setIsNavOpened(true);
@@ -67,8 +71,48 @@ function App() {
         });
   }, [isUserLoggedIn])
 
+  /*useEffect(() => {
+    if (isUserLoggedIn) {
+      const localUserData = localStorage.getItem('currentUser');
+      const localMovies = localStorage.getItem('movies');
+      const localSavedMovies = localStorage.getItem('savedMovies');
 
-  /* useEffect(() => {
+      if (!localUserData) {
+        mainApi
+          .getUserData()
+          .then((res) => {
+            localStorage.setItem('currentUser', JSON.stringify(res.data));
+            setCurrentUser(res.data);
+          })
+          .catch((err) => {
+            console.log(err, 'Could not get user data');
+          })
+      } else {
+        setCurrentUser(JSON.parse(localUserData));
+      }
+
+      if (!localMovies) {
+        moviesApi
+          .getMovies()
+          .then((res) => {
+            localStorage.setItem('movies', JSON.stringify(res.data));
+            setMovies(res.data);
+          })
+          .catch((err) => {
+            console.log(err, 'Could not get movies data');
+          })
+      } else {
+        setMovies(JSON.parse(localMovies));
+      }
+
+      if (!localSavedMovies) {
+
+      }
+    }
+  }, [isUserLoggedIn])*/
+
+
+  useEffect(() => {
     if (!isUserLoggedIn) {
       return
     }
@@ -81,7 +125,7 @@ function App() {
       .catch((err) => {
         console.log(err)
       })
-  }, [isUserLoggedIn]) */
+  }, [isUserLoggedIn])
 
   const handleNavigationClose = () => {
     setIsNavOpened(false);
@@ -98,17 +142,18 @@ function App() {
         })
   }
 
-  function handleFilterMovies(data) {
+function handleFilterMovies(data) {
     moviesApi
       .getMovies(localStorage.getItem('jwt'))
       .then((res) => {
         setListOfMovies(res)
+        setFilteredItem(data)
         console.log(res)
       })
       .catch((err) => {
         console.log(err)
       })
-    setFilteredItem(data)
+
   }
 
   function handleShortMovies(data) {
@@ -165,7 +210,7 @@ function App() {
           <Route exact path="/movies/*" element={
             <ProtectedRoute path='' isUserLoggedIn={isUserLoggedIn}>
               <Header isUserLoggedIn={isUserLoggedIn} onNavOpen={handleNavigationOpen} />
-              <Movies listOfMovies={listOfMovies} filteredItem={filteredItem} onFilterMovies={handleFilterMovies} onShortMovies={handleShortMovies}/>
+              <Movies movies={movies} filteredItem={filteredItem} onFilterMovies={handleFilterMovies} onShortMovies={handleShortMovies}/>
               <Footer />
             </ProtectedRoute>
           }>
@@ -175,7 +220,7 @@ function App() {
               <Header isUserLoggedIn={isUserLoggedIn} onNavOpen={handleNavigationOpen} />
               <SavedMovies />
               <Footer />
-            </ProtectedRoute> 
+            </ProtectedRoute>
           }>
           </Route>
           <Route path="signup" element={<Register handleRegister={handleRegister} />} />
